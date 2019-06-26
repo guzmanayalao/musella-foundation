@@ -1,0 +1,197 @@
+$webBrightBlue: #25bbfc;
+$mediumBrainBlue: #5393ce;
+$darkGray: #4d555b;
+$lightGreen: #d9ebd0;
+$teal: #42ade2;
+$lightBlue: #8bcaef;
+
+body {
+    background: blue;
+    font-family: 'Roboto Condensed', sans-serif;
+    section#main-header {
+        header {
+            padding: 1rem 3rem 0rem;
+            @media screen and (max-width: 992px) {
+                padding: 1rem 2rem 0rem;
+
+            }
+            @media screen and (max-width: 768px) {
+                padding: .5rem 1rem 0rem;
+            }
+        }
+        div.logos {
+            display: flex;
+            justify-content: space-between;
+            max-width: 100%;
+            align-items: center;
+            @media screen and (max-width: 768px) {
+                flex-direction: column;
+            }
+            img {
+                &:nth-child(1) {
+                    max-width: 299px;
+                    height: 68px;
+                    @media screen and (max-width: 992px) {
+                        max-width: 50%;
+                        height: auto;
+                    }
+                    @media screen and (max-width: 768px) {
+                        max-width: 100%;
+                    }
+                }
+                &:nth-child(2) {
+                    max-width: 450px;
+                    @media screen and (max-width: 992px) {
+                        max-width: 50%;
+                    }
+                    @media screen and (max-width: 768px) {
+                        max-width: 100%;
+                    }
+                }
+            }
+        }
+        nav {
+            margin-top: 1rem;
+            ul {
+                display: flex;
+                list-style-type: none;
+                padding-left: 0;
+                @media screen and (max-width: 768px) {
+                    display: none;
+    
+                }
+                li {
+                    margin-right: 2rem;
+                    a {
+                        text-decoration: none;
+                        color: black;
+                        font-family: 'Roboto Condensed';
+                        @media screen and (max-width: 992px) {
+                            font-size: .8rem;
+            
+                        }
+                    }
+                }
+                #donate-button {
+                    margin-left: auto;
+                }
+            }
+        }
+        div#main-header-image {
+            position: relative;
+            @media screen and (max-width: 992px) {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+            div#new-patient-wrapper {
+                position: absolute;
+                width: 40rem;
+                height: 100%;
+                z-index: 2; 
+                top: 0;
+                right: 5%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                @media screen and (max-width: 992px) {
+                    position: relative;
+                    width: 100%;
+                    right: 0%;
+                }
+                div#new-patient-dialog{
+                    width: 100%;
+                    
+                    div {
+                        &:nth-child(1){
+                            background: #fff;
+                            text-align: center;
+                        }
+                        &:nth-child(2){
+                            background: $webBrightBlue;
+                            text-align: center;
+                            display: flex;
+                            @media screen and (max-width: 992px) {
+                                justify-content: center;
+                            }
+                            @media screen and (max-width: 768px) {
+                            }
+                            span {
+                                color: white;
+                                padding: 1rem;
+                                font-size: 11pt;
+                                border-right: 1px solid white;
+                                @media screen and (max-width: 992px) {
+                                    max-width: 10rem;
+                                }
+                                @media screen and (max-width: 768px) {
+                                    font-size: 8pt;
+                                    padding: .5rem;
+                                }
+                                img {
+                                    width: 50%;
+                                    display: block;
+                                    margin: .5rem auto;
+                                }
+                            }
+                        }
+                    }
+                }
+
+            }
+            img {
+                z-index: 1;
+                width: 100%;
+            }
+        }
+        div#our-sponsors {
+            background: $webBrightBlue;
+            display: flex;
+            justify-content: flex-end;
+        }
+    }
+    section#advisory-board {
+        background: url('../images/1x/SVG/2x/Asset 4@2x.png');
+        margin: 0;
+        padding: 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        text-align: center;
+        h1 {
+            color: white;
+            font-family: 'Roboto Condensed';
+            text-transform: uppercase;
+        }
+        div.member{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            .member-image {
+                position: relative;
+                img#memeber-photo {
+                    margin: auto;
+                    position: relative;
+                    
+                }
+                div#icon {
+                    background: $webBrightBlue;
+                    border-radius: 50%;
+                    color: white; 
+                    width: 3rem;
+                    height: 3rem;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    padding: 1rem;
+                    line-height: 0;
+                    position: absolute;
+                    bottom: -1.5rem;
+                    left: calc(50%-1.5rem);
+                }
+            }
+            
+        }
+    }
+}
