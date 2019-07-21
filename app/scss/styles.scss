@@ -4,8 +4,38 @@ $darkGray: #4d555b;
 $lightGreen: #d9ebd0;
 $teal: #42ade2;
 $lightBlue: #8bcaef;
+@font-face {
+    font-family: "Myriad Pro";
+    src: url("./fonts/MyriadPro-Regular.otf") format("otf");
+}
+
+@font-face {
+    font-family: "impact";
+    src: url("./fonts/Impact.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Raleway";
+    src: url("./fonts/Raleway-Bold.ttf") format("truetype");
+}
+
+.a-left {
+    position: absolute;
+    left: 50px;
+    bottom: 0;
+    z-index: 100;
+    cursor: pointer;
+}
+
+.a-right {
+    position: absolute;
+    right: 50px;
+    bottom: 0;
+    cursor: pointer;
+}
+
 // For Staging Only
-div#logIn{
+div#logIn {
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -15,38 +45,33 @@ div#logIn{
         width: 20%;
     }
 }
+
 .body-menu-active {
     overflow: hidden;
 }
-body {
 
+body {
     background: blue;
     font-family: 'Roboto Condensed', sans-serif;
-
-    
-
     .hamburger {
         position: relative;
         z-index: 4;
-        color:$webBrightBlue;
+        color: #000;
         padding: 1rem;
         display: flex;
         justify-content: center;
         align-content: center;
-        align-items: center; 
+        align-items: center;
         width: 4rem;
         cursor: pointer;
         .icon-active {
             color: white;
         }
-
-        @media screen and (max-width: 600px){
-            font-size: 1rem; 
+        @media screen and (max-width: 600px) {
+            font-size: 1rem;
             padding: .5rem 0rem;
             width: 3.4rem;
-
-            
-        } 
+        }
     }
     .menu-active {
         transform: scale(1) !important;
@@ -70,8 +95,7 @@ body {
         padding: 1rem;
         text-align: center;
         transition: transform .3s;
-        z-index: 3; 
-        
+        z-index: 3;
         li {
             list-style-type: none;
             margin: 1rem 0;
@@ -90,13 +114,9 @@ body {
     }
     section#main-header {
         header {
-            padding: 1rem 3rem 0rem;
+            padding: 1rem 0 0 0;
             @media screen and (max-width: 992px) {
                 padding: 1rem 2rem 0rem;
-
-            }
-            @media screen and (max-width: 768px) {
-                padding: .5rem 1rem 0rem;
             }
         }
         div.logos {
@@ -104,19 +124,20 @@ body {
             justify-content: space-between;
             max-width: 100%;
             align-items: center;
+            @media screen and (max-width: 768px) {
+                align-items: flex-end;
+            }
             .menu-logo-wrapper {
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
                 @media screen and (max-width: 768px) {
-                   width: 100%;
-    
+                    width: 100%;
                 }
                 .hamburger {
                     display: none;
                     @media screen and (max-width: 768px) {
                         display: inline-block;
-        
                     }
                 }
             }
@@ -125,14 +146,9 @@ body {
             }
             img {
                 &:nth-child(1) {
-                    max-width: 299px;
-                    height: 68px;
-                    @media screen and (max-width: 992px) {
-                        max-width: 50%;
-                        height: auto;
-                    }
+                    max-width: 246px;
                     @media screen and (max-width: 768px) {
-                        max-width: 70%;
+                        max-width: 245px;
                     }
                 }
                 &:nth-child(2) {
@@ -150,23 +166,18 @@ body {
             margin-left: auto;
             @media screen and (max-width: 768px) {
                 margin-left: 0;
-                
-
             }
-            button{
+            button {
                 border: none;
                 background: none;
-                a{
+                a {
                     color: red !important;
-                    
                     @media screen and (max-width: 768px) {
                         margin-left: 0;
                         font-size: 1.1rem;
-                    font-weight: 900;
-        
+                        font-weight: 900;
                     }
-
-                }   
+                }
             }
         }
         nav {
@@ -177,22 +188,27 @@ body {
                 padding-left: 0;
                 @media screen and (max-width: 768px) {
                     display: none;
-    
                 }
                 li {
-                    margin-right: 2rem;
+                    margin-right: 45px;
                     a {
                         text-decoration: none;
                         color: black;
                         font-family: 'Roboto Condensed';
+                        font-size: 16px;
                         @media screen and (max-width: 992px) {
                             font-size: .8rem;
-            
+                        }
+                        &:hover {
+                            border-bottom: 1px solid $webBrightBlue;
                         }
                     }
+                    .red {
+                        color: #BE272D;
+                        font-size: 20px;
+                        line-height: 0;
+                    }
                 }
-                
-                
             }
         }
         div#main-header-image {
@@ -203,75 +219,104 @@ body {
                 justify-content: center;
                 align-items: center;
             }
+            div.new-patient-position-wrapper {
+                width: 1200px;
+            }
+            .new-patient-position-wrapper-50 {
+                width: 50%;
+                margin-left: auto;
+                @media screen and (max-width: 768px) {
+                    margin-left: auto;
+                    margin-right: auto;
+                    width: 100%;
+                }
+            }
             div#new-patient-wrapper {
                 position: absolute;
-                width: 40rem;
+                width: 100%;
                 height: 100%;
-                z-index: 2; 
+                z-index: 2;
                 top: 0;
-                right: 5%;
+                right: 0;
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                @media screen and (max-width: 992px) {
+                @media screen and (max-width: 768px) {
                     position: relative;
                     width: 100%;
                     right: 0%;
                 }
-                div#new-patient-dialog{
-                    width: 100%;
+                div#new-patient-dialog {
+                    max-width: 400px;
+                    padding-bottom: 2rem;
+                    margin: auto;
+                    @media screen and (max-width: 768px) {
+                        padding-top: 2rem;
+                    }
                     h1 {
-                        background: #fff;
+                        background: rgba(255, 255, 255, .78);
                         text-align: center;
                         margin-bottom: 0;
-                        text-transform: uppercase;
-                        font-size: 1.5rem;
-                        padding: 1rem;
+                        padding: 1.1rem 0;
+                        box-shadow: inset 0px 0px 8px 1px rgba(0, 0, 0, 0.24);
                         @media screen and (max-width: 768px) {
                             font-size: 1rem;
-                            
+                            box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.24);
                         }
-                        span {
-                            font-weight: 900;
+                        #new-patients {
+                            font-family: "Impact";
+                            color: #4D555B;
+                            font-weight: bolder;
+                            font-size: 32px;
+                            white-space: nowrap;
+                            @media screen and (max-width: 481px) {
+                                font-size: 24px;
+                            }
+                        }
+                        #start-here {
+                            font-family: "Raleway";
+                            text-transform: uppercase;
                             color: $webBrightBlue;
+                            font-weight: bold;
+                            font-size: 30px;
+                            @media screen and (max-width: 481px) {
+                                font-size: 22px;
+                            }
                         }
-                    }                    
+                    }
                     div {
-                        
-                        &:nth-child(2){
-                            background: $webBrightBlue;
+                        &:nth-child(2) {
                             text-align: center;
                             display: flex;
-                            @media screen and (max-width: 992px) {
-                                justify-content: center;
-                            }
                             @media screen and (max-width: 768px) {
+                                justify-content: center;
+                                box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.24);
                             }
                             a {
                                 color: white;
-                                padding: 1rem .5rem;
-                                font-size: 11pt;
+                                padding: .25rem .25rem .25rem .25rem;
+                                font-size: 8pt;
                                 border-right: 1px solid white;
                                 display: flex;
                                 flex-direction: column;
                                 align-items: center;
                                 justify-content: flex-start;
                                 width: 25%;
-                                font-weight: 600;
                                 text-decoration: none;
-                                
-                                @media screen and (max-width: 992px) {
-                                    max-width: 10rem;
+                                background: $webBrightBlue;
+                                font-family: "Myriad Pro";
+                                white-space: nowrap;
+                                &:last-child {
+                                    border-right: 0px;
                                 }
                                 @media screen and (max-width: 768px) {
-                                    font-size: 6pt;
+                                    font-size: 10px;
                                     padding: .5rem;
                                 }
-                                
                                 img {
-                                    width: 3.5rem;
+                                    width: 40px;
                                     display: block;
-                                    margin: .5rem auto 1rem auto;
+                                    margin: .25rem auto;
                                     @media screen and (max-width: 768px) {
                                         width: 2rem;
                                     }
@@ -280,7 +325,6 @@ body {
                         }
                     }
                 }
-
             }
             img {
                 z-index: 1;
@@ -289,107 +333,160 @@ body {
         }
         div#our-sponsors {
             background: $webBrightBlue;
-            display: flex;
-            align-items: center;
-            justify-content: space-around;
             color: white;
             font-weight: 600;
-            @media screen and (max-width: 992px) {
+            .w50 {
+                width: 50%;
+                margin-left: auto;
+                display: flex;
+                align-items: center;
+                @media screen and (max-width: 992px) {
+                    margin-left: auto;
+                    margin-right: auto;
+                    justify-content: center;
+                }
+            }
+            @media screen and (max-width: 768px) {
                 flex-direction: column;
                 padding-top: 1rem;
-                
+                background: white;
+                color: $webBrightBlue;
             }
             h6 {
                 text-transform: uppercase;
                 margin-bottom: 0;
+                height: 1rem;
+                white-space: nowrap;
+                font-size: 12px;
+                font-family: "Raleway";
+                margin-right: 27px;
+                span {
+                    font-weight: bold;
+                }
             }
             .sponsor-wrapper {
                 display: flex;
                 align-items: center;
                 justify-content: flex-end;
-                padding: 1rem;
+                padding: 1rem 0;
                 @media screen and (max-width: 992px) {
                     justify-content: center;
-                    width:100%;
-
+                    width: 100%;
                 }
             }
             a {
-                width: 5rem;
-                margin-right: 1rem;
+                margin-right: 27px;
                 @media screen and (max-width: 768px) {
-                    width: 3rem;
+                    max-width: 66px;
+                    margin-right: 1rem;
+                }
+                @media screen and (max-width: 481px) {
+                    max-width: 55px;
+                    margin-right: 1rem;
                 }
                 img {
-                    width: 100%;
+                    width: auto;
                 }
             }
         }
     }
     section#advisory-board {
-        background: url('../images/1x/SVG/2x/Asset 4@2x.png');
+        background: url('../images/1x/advisory-board-bg.png');
         margin: 0;
-        padding: 0 0 2rem 0;
+        padding: 0 0 52px 0;
         background-repeat: no-repeat;
         background-size: cover;
         text-align: center;
+        @media screen and (max-width: 768px) {
+            font-size: 1rem;
+            padding-top: 1rem;
+            padding-bottom: 3rem;
+        }
         h1 {
-            color: white;
-            font-family: 'Roboto Condensed';
             text-transform: uppercase;
+            padding-top: 100px;
+            padding-bottom: 70px;
             @media screen and (max-width: 768px) {
-                font-size: 1rem;
-                padding: 1rem;
+                padding-top: 40px;
+            }
+            span {
+                &:nth-child(1) {
+                    font-family: "Raleway";
+                    font-weight: bold;
+                    color: #9FCEEF;
+                    font-size: 34px;
+                }
+                &:nth-child(2) {
+                    font-family: "Impact";
+                    font-size: 32px;
+                    color: white;
+                }
             }
         }
-        div.member{
+        div.member {
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             .member-image {
                 position: relative;
+                padding: 0 0 100px 0;
                 img#memeber-photo {
                     margin: auto;
                     position: relative;
-                    
                 }
                 div#icon {
                     background: $webBrightBlue;
                     border-radius: 50%;
-                    color: white; 
+                    color: white;
                     width: 3rem;
                     height: 3rem;
                     display: flex;
                     justify-content: center;
                     align-items: center;
                     padding: 1rem;
-                    line-height: 0;
+                    line-height: 1.2;
                     position: absolute;
                     bottom: -1.5rem;
                     left: calc(50%-1.5rem);
+                    font-weight: bold;
+                    font-size: 1.2rem;
+                }
+                #member-info {
+                    padding-top: 50px;
+                    color: white;
+                    font-family: "Raleway";
+                    font-weight: bold;
+                    span {
+                        display: block;
+                        text-align: center;
+                    }
+                    .member-name {
+                        font-size: 22px;
+                    }
+                    .member-secondary {
+                        font-size: 18px;
+                    }
                 }
             }
-            
         }
     }
     footer {
         background: $webBrightBlue;
         padding: 1rem;
         font-size: .8rem;
-
-        @media screen and (max-width: 992px){
+        @media screen and (max-width: 992px) {
             flex-direction: column;
             align-items: center;
         }
         .footer-item-column {
             display: flex;
-            align-items: center; 
+            align-items: center;
             flex-direction: column;
-            @media screen and (max-width: 992px){
+            @media screen and (max-width: 992px) {
                 margin-bottom: 1rem;
             }
-            p{
+            p {
                 padding: 0;
                 margin: 0;
                 text-transform: uppercase;
@@ -399,20 +496,18 @@ body {
         .footer-item {
             display: flex;
             align-items: center;
-            @media screen and (max-width: 992px){
+            @media screen and (max-width: 992px) {
                 margin-bottom: 1rem;
                 flex-direction: column;
                 text-align: center;
-                
             }
-            img{
+            img {
                 margin-right: 1rem;
-                @media screen and (max-width: 992px){
+                @media screen and (max-width: 992px) {
                     margin-right: 0;
-                    
                 }
             }
-            p{
+            p {
                 text-transform: uppercase;
                 color: white;
                 margin: 0;
