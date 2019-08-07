@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/styles.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css">
+    <title>Musella Foundation For Brain Tumor Research & Information, INC.</title>
+</head>
+
+<body>
+    <section id="main-header">
+        <header class="container">
+            <div class="">
+
+                <div class="logos">
+                    <div class="menu-logo-wrapper">
+                        <img id="logo" src="./images/1x/musella-foundation-logo.png" alt="Logo for Musella Foundation For Brain Tumor Research & Information, INC .">
+                        <span class="hamburger"><i class="fas fa-bars fa-2x"></i></span>
+                    </div>
+                    <img src="./images/clinical-trials-logo.png" alt="Clinical Trials & Noteworthy Treatments for Brain Tumors">
+                </div>
+                <div class="menu">
+                    <li>
+                        <a href="/learn-about">Learn About</a>
+                    </li>
+                    <li>
+                        <a href="/find-treatments">Find Treatments</a>
+                    </li>
+                    <li>
+                        <a href="/virtual-trial">Virtual Trial</a>
+                    </li>
+                    <li>
+                        <a href="/newsletter">Newsletter</a>
+                    </li>
+                    <li>
+                        <a href="/resources">Resources</a>
+                    </li>
+                    <li>
+                        <a href="/about-us">About Us</a>
+                    </li>
+                    <li class="red">
+                        <a href="/donate">Donate</a>
+                    </li>
+                </div>
+                <nav role="navigation">
+                    <ul class="">
+                        <li>
+                            <a href="/learn-about">Learn About</a>
+                        </li>
+                        <li>
+                            <a href="/find-treatments">Find Treatments</a>
+                        </li>
+                        <li>
+                            <a href="/virtual-trial">Virtual Trial</a>
+                        </li>
+                        <li>
+                            <a href="/newsletter">Newsletter</a>
+                        </li>
+                        <li>
+                            <a href="/resources">Resources</a>
+                        </li>
+                        <li>
+                            <a href="/about-us">About Us</a>
+                        </li>
+                        <li>
+                            <a class="red" href="/donate">Donate</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+    </section>
+    <section id="clinical-trials">
+        <div class="container">
+            <div class="row">
+                <h1 class="mx-auto mx-lg-1"><span>Clinical</span><span>Trials</span></h1>
+            </div>
+            <div class="row">
+                <div class="col-lg-5 offset-lg-2">
+                    <div class="row">
+                        <div class="clinical-trials-browse mx-3 mx-lg-0">
+                            <h3>Clinical Trials Browse</h3>
+                            <ul>
+                                <li>The number next to the tumor type is how many trials we have for that tumor type (without regard to the other criteria specified).</li>
+                                <li>All fields are optional. Only select a value if you want to limit results.</li>
+                                <li>You can now also use the keyword search to look for a specific doctor, hostpial, treamtent or NCT number</li>
+                                <li>To find trials for anaplastic astrocytoma, select tumor type BRAIN NEOPLASM then in the key words search box, enter anaplastic astrocytoma.</li>
+                                <li>Karnofsky score is a measure of how well the patient is doing now. Pick the closest description that matches how the patient is today. It is an inexact number and may fluctuate quickly.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <img class="d-none d-lg-block" src="./images/1x/clinical-trials-image.png" alt="">
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 mx-3 mx-lg-3 px-0 mt-5 mt-lg-0">
+                    <div class="form-wrapper">
+                        <form>
+                            <div class="input-wrapper">
+                                <label for="tumor-type">Select Tumor Type</label>
+                                <input type="text" name="tumor-type">
+                            </div>
+                            <div class="input-wrapper">
+                                <label for="age">Age (in years)</label>
+                                <input type="text" name="age">
+                            </div>
+                            <div class="input-wrapper">
+                                <label for="karnovsky-score">Karnovsky-Score</label>
+                                <input type="text" name="karnovsky-score">
+                            </div>
+                            <div class="input-wrapper">
+                                <label for="diagnosed-date">Newly Diagnosed or Recurrent</label>
+                                <input type="text" name="diagnosed-date">
+                            </div>
+                            <div class="input-wrapper">
+                                <label for="trial-phase">Trial Phase</label>
+                                <input type="text" name="trial-phase">
+                            </div>
+                            <div class="input-wrapper">
+                                <label for="country">Country</label>
+                                <input type="text" name="trial-phase">
+                            </div>
+                            <div class="input-wrapper">
+                                <label for="state">State</label>
+                                <input type="text" name="state">
+                            </div>
+                            <div class="input-wrapper">
+                                <label for="zip-code">Zip Code</label>
+                                <input type="text" name="text">
+                            </div>
+                            <div class="input-wrapper">
+                                <label for="within">Within</label>
+                                <input type="text" name="within">
+                            </div>
+                            <div class="input-wrapper">
+                                <label for="keywords">Keywords</label>
+                                <input type="text" name="keywords">
+                            </div>
+                            <div id="trials_submit" class="input-wrapper">
+                                <input type="button" value="FIND TRIALS">
+                                <img src="./images/1x/find-trials-arrow.png" alt="">
+                            </div>
+                        </form>
+                        <img class="floating-image d-none d-md-block d-lg-none" src="./images/1x/clinical-trials-image.png" alt="">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="">
+            <div id="our-sponsors">
+                <div style="max-width: 1200px; margin: auto;">
+                    <h6 class="d-block d-sm-none ml-4">Our <span>Sponsors</span></h6>
+
+                    <div class="w50-center">
+
+                        <h6 class="d-none d-sm-block d-md-block">Our <span>Sponsors</span></h6>
+                        <div class="sponsor-wrapper">
+                            <a href=""><img src="./images/sponsor-logos/1x/Asset 5.png" alt=""></a>
+                            <a href=""><img src="./images/sponsor-logos/1x/Asset 6.png" alt=""></a>
+                            <a href=""><img src="./images/sponsor-logos/1x/Asset 2.png" alt=""></a>
+                            <a href=""><img src="./images/sponsor-logos/1x/Asset 4.png" alt=""></a>
+
+                            <a href=""><img src="./images/sponsor-logos/1x/a0r7RQ.png" alt=""></a>
+
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="container-fluid">
+        <div class="container d-flex flex-column flex-md-column flex-lg-row align-items-center justify-content-between">
+            <div class="footer-item">
+                <img src="./images/1x/SVG/1x/phone-icon.png" alt="">
+                <p>Call Us Today<br><span> 888-295-4740</span></p>
+            </div>
+            <div class="footer-item">
+                <img src="./images/1x/SVG/1x/location-icon.png" alt="">
+                <p>Musella Foundation<br><span>1100 Peninsula Blvd., Hewlett, NY 11557</span></p>
+            </div>
+            <div class="footer-item-column">
+                <p>FIND US ON</p>
+                <div>
+                    <img src="./images/1x/SVG/1x/fb-icon.png" alt="">
+                    <img src="./images/1x/SVG/1x/twitter-icon.png" alt="">
+                </div>
+
+            </div>
+            <div class="footer-item">
+                <p>&copy; Musella Foundation 2019</p>
+            </div>
+        </div>
+
+
+    </footer>
+    <div id="main-footer" class="py-4">
+        <div class="container d-flex flex-column flex-lg-row">
+            <div class=" d-flex flex-column flex-md-column align-items-start justify-content-between">
+                <h3><span>Quick</span><span> Links</span></h3>
+                <div class="d-flex flex-column flex-md-row">
+                    <ul class="d-flex flex-column">
+                        <li>Home</li>
+                        <li>Brain Tumor Guide</li>
+                        <li>Contact Us</li>
+                        <li>Find A Treatment</li>
+                    </ul>
+                    <ul class="d-flex flex-column">
+                        <li>Noteworthy Treatments</li>
+                        <li>News</li>
+                        <li>Virtual Trial</li>
+                        <li>Videos</li>
+                    </ul>
+                </div>
+
+            </div>
+            <div class=" d-flex flex-column flex-md-column align-items-start ml-lg-auto mt-5 mt-lg-0">
+                <div class="headline-image-wrapper position-relative">
+                    <h3><span>Our</span><span> Newsletter</span></h3>
+                    <img class="position-absolute d-none d-sm-block" src="./images/1x/footer-graphic.png" alt="" style="top: 0; left: 103%">
+                </div>
+
+                <p class="text-left mb-2">Brain Tumor News Blast</p>
+                <p class="text-left mb-2">Enter your email address to subscribe.</p>
+                <div class="footer-input-wrapper">
+                    <input type="text" placeholder="Email Address">
+                    <button>GO</button>
+                </div>
+                <p class="mt-2">Copyright &copy; 2019 <span>Musella Foundation</span></p>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        $(".hamburger").click(function() {
+            $(this).find("i").toggleClass("fa-bars");
+            $(this).find("i").toggleClass("fa-times");
+            $(this).find("i").toggleClass("icon-active");
+            $("body").toggleClass("body-menu-active")
+            $(".menu").toggleClass("menu-active");
+
+
+        })
+
+        $(".menu li ").click(function() {
+            $(".menu").removeClass("menu-active");
+            $("body").toggleClass("body-menu-active")
+            $(".hamburger").find("i").toggleClass("fa-bars");
+            $(".hamburger").find("i").toggleClass("fa-times");
+            $(".hamburger").find("i").toggleClass("icon-active");
+
+
+        })
+    </script>
+</body>
+
+</html>
