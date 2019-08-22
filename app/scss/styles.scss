@@ -34,6 +34,10 @@ $lightBlue: #8bcaef;
     cursor: pointer;
 }
 
+.is-bright-blue {
+    color: $webBrightBlue;
+}
+
 // For Staging Only
 div#logIn {
     height: 100vh;
@@ -742,6 +746,117 @@ body {
                 padding: 0 1rem;
                 color: white;
                 font-weight: bold;
+            }
+        }
+    }
+}
+
+section#brain-tumor-symptoms {
+    background: url("../images/1x/bg-symptoms_1.png");
+    background-position: -100px -100px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 68px;
+    padding-bottom: 68px;
+    font-family: 'Myriad Pro';
+    .survey-notice {
+        text-align: center;
+        color: $webBrightBlue;
+        font-weight: bold;
+    }
+    .position-relative img {
+        bottom: 0;
+    }
+    .svg {
+        width: 95%;
+        margin-bottom: 1rem;
+    }
+    .svg-mobile {
+        width: 75%;
+        margin: 1rem auto;
+    }
+    .bg-symptoms-content {
+        background: url("../images/1x/bg-symptoms.png");
+        background-size: cover;
+        background-position: -100px -100px;
+        background-repeat: no-repeat;
+    }
+    h1 {
+        margin-bottom: 35px;
+        font-size: 32px;
+        text-transform: uppercase;
+        span:first-child {
+            font-family: 'Raleway';
+            color: white;
+        }
+        span:last-child {
+            font-family: 'Raleway';
+            font-weight: bolder;
+            border-bottom: 1px solid white;
+            padding-bottom: .5rem;
+            margin-left: .8rem;
+        }
+    }
+    aside {
+        background: white;
+        padding: 18px 13px 20px 18px;
+        font-size: 20px;
+        line-height: 26.4px;
+        h3 {
+            font-family: 'Impact', sans-serif;
+            font-size: 23px;
+            border-bottom: 2px solid #4EBEC6;
+            width: 96px;
+            white-space: nowrap;
+            padding-bottom: 12px;
+            margin-bottom: 20px;
+        }
+    }
+    .symptoms-list {
+        font-family: "Myriad Pro";
+        font-size: 20px;
+        padding-left: 32px;
+        padding-right: 30px;
+        line-height: 24px;
+        h3 {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 0;
+        }
+    }
+    .table-wrapper {
+        overflow-x: auto;
+    }
+    table {
+        min-width: 500px;
+        width: 100%;
+        table-layout: fixed;
+        thead {
+            background: #5294cf !important;
+            color: white;
+            td {
+                width: 100%;
+            }
+        }
+        tbody tr:nth-of-type(odd) {
+            background: #f3f3f3
+        }
+        tbody tr:nth-of-type(even) {
+            background: white;
+        }
+        tr td:nth-of-type(2),
+        tr td:nth-of-type(3) {
+            width: 200px !important;
+            text-align: center;
+        }
+        td {
+            border: 1px solid #5294cf;
+            padding: .2rem .5rem;
+            p {
+                margin-bottom: 0;
+            }
+            .center {
+                text-align: center;
             }
         }
     }
