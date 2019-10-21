@@ -5,859 +5,1163 @@ $lightGreen: #d9ebd0;
 $teal: #42ade2;
 $lightBlue: #8bcaef;
 @font-face {
-    font-family: "Myriad Pro";
-    src: url("./fonts/MyriadPro-Regular.otf") format("otf");
+  font-family: "Myriad Pro";
+  src: url("./fonts/MyriadPro-Regular.otf") format("otf");
 }
 
 @font-face {
-    font-family: "impact";
-    src: url("./fonts/Impact.ttf") format("truetype");
+  font-family: "impact";
+  src: url("./fonts/Impact.ttf") format("truetype");
 }
 
 @font-face {
-    font-family: "Raleway";
-    src: url("./fonts/Raleway-Bold.ttf") format("truetype");
+  font-family: "Raleway";
+  src: url("./fonts/Raleway-Bold.ttf") format("truetype");
 }
 
 .a-left {
-    position: absolute;
-    left: 50px;
-    bottom: 0;
-    z-index: 100;
-    cursor: pointer;
+  position: absolute;
+  left: 50px;
+  bottom: 0;
+  z-index: 100;
+  cursor: pointer;
 }
 
 .a-right {
-    position: absolute;
-    right: 50px;
-    bottom: 0;
-    cursor: pointer;
+  position: absolute;
+  right: 50px;
+  bottom: 0;
+  cursor: pointer;
 }
 
 .is-bright-blue {
-    color: $webBrightBlue;
+  color: $webBrightBlue;
 }
 
 // For Staging Only
 div#logIn {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    input {
-        width: 20%;
-    }
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  input {
+    width: 20%;
+  }
 }
 
 .body-menu-active {
-    overflow: hidden;
+  overflow: hidden;
 }
 
 body {
-    background: blue;
-    font-family: 'Roboto Condensed', sans-serif;
-    .hamburger {
-        position: relative;
-        z-index: 4;
-        color: #000;
-        padding: 1rem;
-        display: flex;
-        justify-content: center;
-        align-content: center;
-        align-items: center;
-        width: 4rem;
+  background: blue;
+  font-family: "Roboto Condensed", sans-serif;
+  .hamburger {
+    position: relative;
+    z-index: 4;
+    color: #000;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    width: 4rem;
+    cursor: pointer;
+    .icon-active {
+      color: white;
+    }
+    @media screen and (max-width: 600px) {
+      font-size: 1rem;
+      padding: 0.5rem 0rem;
+      width: 3.4rem;
+    }
+  }
+  .menu-active {
+    transform: scale(1) !important;
+    display: flex !important;
+    transition: transform 0.3s;
+  }
+  .menu {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: $webBrightBlue;
+    display: flex;
+    transform: scale(0);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.1rem;
+    font-weight: 900;
+    padding: 1rem;
+    text-align: center;
+    transition: transform 0.3s;
+    z-index: 3;
+    li {
+      list-style-type: none;
+      margin: 1rem 0;
+      cursor: pointer;
+    }
+    a {
+      text-decoration: none;
+      color: white;
+      text-transform: uppercase;
+      transition: color 0.2s;
+      &:hover {
         cursor: pointer;
-        .icon-active {
-            color: white;
-        }
-        @media screen and (max-width: 600px) {
-            font-size: 1rem;
-            padding: .5rem 0rem;
-            width: 3.4rem;
-        }
+        transition: color 0.2s;
+      }
     }
-    .menu-active {
-        transform: scale(1) !important;
-        display: flex !important;
-        transition: transform .3s;
+  }
+  section#main-header {
+    header {
+      padding: 1rem 0 0 0;
+      @media screen and (max-width: 992px) {
+        padding: 1rem 2rem 0rem;
+      }
     }
-    .menu {
-        position: fixed;
-        top: 0;
-        bottom: 0;
-        right: 0;
-        left: 0;
-        background: $webBrightBlue;
+    div.logos {
+      display: flex;
+      justify-content: space-between;
+      max-width: 100%;
+      align-items: center;
+      @media screen and (max-width: 768px) {
+        align-items: flex-end;
+      }
+      .menu-logo-wrapper {
         display: flex;
-        transform: scale(0);
+        align-items: center;
+        justify-content: space-between;
+        @media screen and (max-width: 768px) {
+          width: 100%;
+        }
+        .hamburger {
+          display: none;
+          @media screen and (max-width: 768px) {
+            display: inline-block;
+          }
+        }
+      }
+      @media screen and (max-width: 768px) {
+        flex-direction: column;
+      }
+      img {
+        &:nth-child(1) {
+          max-width: 246px;
+          @media screen and (max-width: 768px) {
+            max-width: 245px;
+          }
+        }
+        &:nth-child(2) {
+          max-width: 450px;
+          @media screen and (max-width: 992px) {
+            max-width: 50%;
+          }
+          @media screen and (max-width: 768px) {
+            max-width: 100%;
+          }
+        }
+      }
+    }
+    #donate-button {
+      margin-left: auto;
+      @media screen and (max-width: 768px) {
+        margin-left: 0;
+      }
+      button {
+        border: none;
+        background: none;
+        a {
+          color: red !important;
+          @media screen and (max-width: 768px) {
+            margin-left: 0;
+            font-size: 1.1rem;
+            font-weight: 900;
+          }
+        }
+      }
+    }
+    nav {
+      margin-top: 1rem;
+      ul {
+        display: flex;
+        list-style-type: none;
+        padding-left: 0;
+        @media screen and (max-width: 768px) {
+          display: none;
+        }
+        li {
+          margin-right: 45px;
+          a {
+            text-decoration: none;
+            color: black;
+            font-family: "Roboto Condensed";
+            font-size: 16px;
+            @media screen and (max-width: 992px) {
+              font-size: 0.8rem;
+            }
+            &:hover {
+              border-bottom: 1px solid $webBrightBlue;
+            }
+          }
+          .red {
+            color: #be272d;
+            font-size: 20px;
+            line-height: 0;
+          }
+        }
+      }
+    }
+    div#main-header-image {
+      position: relative;
+      @media screen and (max-width: 992px) {
+        display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        font-size: 1.1rem;
-        font-weight: 900;
-        padding: 1rem;
-        text-align: center;
-        transition: transform .3s;
-        z-index: 3;
-        li {
-            list-style-type: none;
-            margin: 1rem 0;
-            cursor: pointer;
+      }
+      div.new-patient-position-wrapper {
+        width: 1200px;
+      }
+      .new-patient-position-wrapper-50 {
+        width: 50%;
+        margin-left: auto;
+        @media screen and (max-width: 768px) {
+          margin-left: auto;
+          margin-right: auto;
+          width: 100%;
         }
-        a {
-            text-decoration: none;
-            color: white;
-            text-transform: uppercase;
-            transition: color .2s;
-            &:hover {
-                cursor: pointer;
-                transition: color .2s;
-            }
+      }
+      div#new-patient-wrapper {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+        top: 0;
+        right: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @media screen and (max-width: 768px) {
+          position: relative;
+          width: 100%;
+          right: 0%;
         }
-    }
-    section#main-header {
-        header {
-            padding: 1rem 0 0 0;
-            @media screen and (max-width: 992px) {
-                padding: 1rem 2rem 0rem;
-            }
-        }
-        div.logos {
-            display: flex;
-            justify-content: space-between;
-            max-width: 100%;
-            align-items: center;
+        div#new-patient-dialog {
+          max-width: 400px;
+          padding-bottom: 2rem;
+          margin: auto;
+          @media screen and (max-width: 768px) {
+            padding-top: 2rem;
+          }
+          h1 {
+            background: rgba(255, 255, 255, 0.78);
+            text-align: center;
+            margin-bottom: 0;
+            padding: 1.1rem 0;
+            box-shadow: inset 0px 0px 8px 1px rgba(0, 0, 0, 0.24);
             @media screen and (max-width: 768px) {
-                align-items: flex-end;
+              font-size: 1rem;
+              box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.24);
             }
-            .menu-logo-wrapper {
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                @media screen and (max-width: 768px) {
-                    width: 100%;
-                }
-                .hamburger {
-                    display: none;
-                    @media screen and (max-width: 768px) {
-                        display: inline-block;
-                    }
-                }
+            #new-patients {
+              font-family: "Impact";
+              color: #4d555b;
+              font-weight: bolder;
+              font-size: 32px;
+              white-space: nowrap;
+              @media screen and (max-width: 481px) {
+                font-size: 24px;
+              }
             }
-            @media screen and (max-width: 768px) {
-                flex-direction: column;
+            #start-here {
+              font-family: "Raleway";
+              text-transform: uppercase;
+              color: $webBrightBlue;
+              font-weight: bold;
+              font-size: 30px;
+              @media screen and (max-width: 481px) {
+                font-size: 22px;
+              }
             }
-            img {
-                &:nth-child(1) {
-                    max-width: 246px;
-                    @media screen and (max-width: 768px) {
-                        max-width: 245px;
-                    }
-                }
-                &:nth-child(2) {
-                    max-width: 450px;
-                    @media screen and (max-width: 992px) {
-                        max-width: 50%;
-                    }
-                    @media screen and (max-width: 768px) {
-                        max-width: 100%;
-                    }
-                }
-            }
-        }
-        #donate-button {
-            margin-left: auto;
-            @media screen and (max-width: 768px) {
-                margin-left: 0;
-            }
-            button {
-                border: none;
-                background: none;
-                a {
-                    color: red !important;
-                    @media screen and (max-width: 768px) {
-                        margin-left: 0;
-                        font-size: 1.1rem;
-                        font-weight: 900;
-                    }
-                }
-            }
-        }
-        nav {
-            margin-top: 1rem;
-            ul {
-                display: flex;
-                list-style-type: none;
-                padding-left: 0;
-                @media screen and (max-width: 768px) {
-                    display: none;
-                }
-                li {
-                    margin-right: 45px;
-                    a {
-                        text-decoration: none;
-                        color: black;
-                        font-family: 'Roboto Condensed';
-                        font-size: 16px;
-                        @media screen and (max-width: 992px) {
-                            font-size: .8rem;
-                        }
-                        &:hover {
-                            border-bottom: 1px solid $webBrightBlue;
-                        }
-                    }
-                    .red {
-                        color: #BE272D;
-                        font-size: 20px;
-                        line-height: 0;
-                    }
-                }
-            }
-        }
-        div#main-header-image {
-            position: relative;
-            @media screen and (max-width: 992px) {
-                display: flex;
-                flex-direction: column;
+          }
+          div {
+            &:nth-child(2) {
+              text-align: center;
+              display: flex;
+              @media screen and (max-width: 768px) {
                 justify-content: center;
-                align-items: center;
-            }
-            div.new-patient-position-wrapper {
-                width: 1200px;
-            }
-            .new-patient-position-wrapper-50 {
-                width: 50%;
-                margin-left: auto;
-                @media screen and (max-width: 768px) {
-                    margin-left: auto;
-                    margin-right: auto;
-                    width: 100%;
-                }
-            }
-            div#new-patient-wrapper {
-                position: absolute;
-                width: 100%;
-                height: 100%;
-                z-index: 2;
-                top: 0;
-                right: 0;
+                box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.24);
+              }
+              a {
+                color: white;
+                padding: 0.25rem 0.25rem 0.25rem 0.25rem;
+                font-size: 8pt;
+                border-right: 1px solid white;
                 display: flex;
-                justify-content: center;
-                align-items: center;
-                @media screen and (max-width: 768px) {
-                    position: relative;
-                    width: 100%;
-                    right: 0%;
-                }
-                div#new-patient-dialog {
-                    max-width: 400px;
-                    padding-bottom: 2rem;
-                    margin: auto;
-                    @media screen and (max-width: 768px) {
-                        padding-top: 2rem;
-                    }
-                    h1 {
-                        background: rgba(255, 255, 255, .78);
-                        text-align: center;
-                        margin-bottom: 0;
-                        padding: 1.1rem 0;
-                        box-shadow: inset 0px 0px 8px 1px rgba(0, 0, 0, 0.24);
-                        @media screen and (max-width: 768px) {
-                            font-size: 1rem;
-                            box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.24);
-                        }
-                        #new-patients {
-                            font-family: "Impact";
-                            color: #4D555B;
-                            font-weight: bolder;
-                            font-size: 32px;
-                            white-space: nowrap;
-                            @media screen and (max-width: 481px) {
-                                font-size: 24px;
-                            }
-                        }
-                        #start-here {
-                            font-family: "Raleway";
-                            text-transform: uppercase;
-                            color: $webBrightBlue;
-                            font-weight: bold;
-                            font-size: 30px;
-                            @media screen and (max-width: 481px) {
-                                font-size: 22px;
-                            }
-                        }
-                    }
-                    div {
-                        &:nth-child(2) {
-                            text-align: center;
-                            display: flex;
-                            @media screen and (max-width: 768px) {
-                                justify-content: center;
-                                box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.24);
-                            }
-                            a {
-                                color: white;
-                                padding: .25rem .25rem .25rem .25rem;
-                                font-size: 8pt;
-                                border-right: 1px solid white;
-                                display: flex;
-                                flex-direction: column;
-                                align-items: center;
-                                justify-content: flex-start;
-                                width: 25%;
-                                text-decoration: none;
-                                background: $webBrightBlue;
-                                font-family: "Myriad Pro";
-                                white-space: nowrap;
-                                &:last-child {
-                                    border-right: 0px;
-                                }
-                                @media screen and (max-width: 768px) {
-                                    font-size: 10px;
-                                    padding: .5rem;
-                                }
-                                img {
-                                    width: 40px;
-                                    display: block;
-                                    margin: .25rem auto;
-                                    @media screen and (max-width: 768px) {
-                                        width: 2rem;
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-            img {
-                z-index: 1;
-                width: 100%;
-            }
-        }
-        div#our-sponsors {
-            background: $webBrightBlue;
-            color: white;
-            font-weight: 600;
-            .w50 {
-                width: 50%;
-                margin-left: auto;
-                display: flex;
-                align-items: center;
-                @media screen and (max-width: 992px) {
-                    margin-left: auto;
-                    margin-right: auto;
-                    justify-content: center;
-                }
-            }
-            @media screen and (max-width: 768px) {
                 flex-direction: column;
-                padding-top: 1rem;
-                background: white;
-                color: $webBrightBlue;
-            }
-            h6 {
-                text-transform: uppercase;
-                margin-bottom: 0;
-                height: 1rem;
+                align-items: center;
+                justify-content: flex-start;
+                width: 25%;
+                text-decoration: none;
+                background: $webBrightBlue;
+                font-family: "Myriad Pro";
                 white-space: nowrap;
-                font-size: 12px;
-                font-family: "Raleway";
-                margin-right: 27px;
-                span {
-                    font-weight: bold;
+                &:last-child {
+                  border-right: 0px;
                 }
-            }
-            .sponsor-wrapper {
-                display: flex;
-                align-items: center;
-                justify-content: flex-end;
-                padding: 1rem 0;
-                @media screen and (max-width: 992px) {
-                    justify-content: center;
-                    width: 100%;
-                }
-            }
-            a {
-                margin-right: 27px;
                 @media screen and (max-width: 768px) {
-                    max-width: 66px;
-                    margin-right: 1rem;
-                }
-                @media screen and (max-width: 481px) {
-                    max-width: 55px;
-                    margin-right: 1rem;
+                  font-size: 10px;
+                  padding: 0.5rem;
                 }
                 img {
-                    width: auto;
+                  width: 40px;
+                  display: block;
+                  margin: 0.25rem auto;
+                  @media screen and (max-width: 768px) {
+                    width: 2rem;
+                  }
                 }
+              }
             }
+          }
         }
+      }
+      img {
+        z-index: 1;
+        width: 100%;
+      }
     }
-    section#advisory-board {
-        background: url('../images/1x/advisory-board-bg.png');
-        margin: 0;
-        padding: 0 0 52px 0;
-        background-repeat: no-repeat;
-        background-size: cover;
-        text-align: center;
-        @media screen and (max-width: 768px) {
-            font-size: 1rem;
-            padding-top: 1rem;
-            padding-bottom: 3rem;
-        }
-        h1 {
-            text-transform: uppercase;
-            padding-top: 100px;
-            padding-bottom: 70px;
-            @media screen and (max-width: 768px) {
-                padding-top: 40px;
-            }
-            span {
-                &:nth-child(1) {
-                    font-family: "Raleway";
-                    font-weight: bold;
-                    color: #9FCEEF;
-                    font-size: 34px;
-                }
-                &:nth-child(2) {
-                    font-family: "Impact";
-                    font-size: 32px;
-                    color: white;
-                }
-            }
-        }
-        div.member {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            .member-image {
-                position: relative;
-                padding: 0 0 100px 0;
-                img#memeber-photo {
-                    margin: auto;
-                    position: relative;
-                }
-                div#icon {
-                    background: $webBrightBlue;
-                    border-radius: 50%;
-                    color: white;
-                    width: 3rem;
-                    height: 3rem;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    padding: 1rem;
-                    line-height: 1.2;
-                    position: absolute;
-                    bottom: -1.5rem;
-                    left: calc(50%-1.5rem);
-                    font-weight: bold;
-                    font-size: 1.2rem;
-                }
-                #member-info {
-                    padding-top: 50px;
-                    color: white;
-                    font-family: "Raleway";
-                    font-weight: bold;
-                    span {
-                        display: block;
-                        text-align: center;
-                    }
-                    .member-name {
-                        font-size: 22px;
-                    }
-                    .member-secondary {
-                        font-size: 18px;
-                    }
-                }
-            }
-        }
-    }
-    footer {
-        background: $webBrightBlue;
-        padding: 1rem;
-        font-size: .8rem;
+    div#our-sponsors {
+      background: $webBrightBlue;
+      color: white;
+      font-weight: 600;
+      .w50 {
+        width: 50%;
+        margin-left: auto;
+        display: flex;
+        align-items: center;
         @media screen and (max-width: 992px) {
-            flex-direction: column;
-            align-items: center;
+          margin-left: auto;
+          margin-right: auto;
+          justify-content: center;
         }
-        .footer-item-column {
-            display: flex;
-            align-items: center;
-            flex-direction: column;
-            @media screen and (max-width: 992px) {
-                margin-bottom: 1rem;
-            }
-            p {
-                padding: 0;
-                margin: 0;
-                text-transform: uppercase;
-                color: white;
-            }
+      }
+      @media screen and (max-width: 768px) {
+        flex-direction: column;
+        padding-top: 1rem;
+        background: white;
+        color: $webBrightBlue;
+      }
+      h6 {
+        text-transform: uppercase;
+        margin-bottom: 0;
+        height: 1rem;
+        white-space: nowrap;
+        font-size: 12px;
+        font-family: "Raleway";
+        margin-right: 27px;
+        span {
+          font-weight: bold;
         }
-        .footer-item {
-            display: flex;
-            align-items: center;
-            @media screen and (max-width: 992px) {
-                margin-bottom: 1rem;
-                flex-direction: column;
-                text-align: center;
-            }
-            img {
-                margin-right: 1rem;
-                @media screen and (max-width: 992px) {
-                    margin-right: 0;
-                }
-            }
-            p {
-                text-transform: uppercase;
-                color: white;
-                margin: 0;
-                padding: 0;
-                span {
-                    font-weight: 600;
-                }
-            }
+      }
+      .sponsor-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        padding: 1rem 0;
+        @media screen and (max-width: 992px) {
+          justify-content: center;
+          width: 100%;
         }
-    }
-    section#clinical-trials {
-        background: url('../images/1x/clinical-trials-gradient-bg.png');
-        background-size: cover;
-        padding-top: 68px;
-        h1 {
-            margin-bottom: 35px;
-            font-size: 32px;
-            text-transform: uppercase;
-            span:first-child {
-                font-family: 'Raleway';
-                color: white;
-            }
-            span:last-child {
-                font-family: 'Raleway';
-                font-weight: bolder;
-                border-bottom: 1px solid white;
-                padding-bottom: .5rem;
-                margin-left: .8rem;
-            }
+      }
+      a {
+        margin-right: 27px;
+        @media screen and (max-width: 768px) {
+          max-width: 66px;
+          margin-right: 1rem;
+        }
+        @media screen and (max-width: 481px) {
+          max-width: 55px;
+          margin-right: 1rem;
         }
         img {
-            width: 100%;
-            margin-top: 18px;
+          width: auto;
         }
-        .clinical-trials-browse {
-            background: white;
-            font-family: 'Myriad Pro', sans-serif;
-            font-size: 16px;
-            padding: 34px 15px 22px 20px;
-            h3 {
-                font-family: 'Impact', sans-serif;
-                font-size: 18px;
-                border-bottom: 2px solid #4EBEC6;
-                width: 158px;
-                white-space: nowrap;
-                padding-bottom: 12px;
-                margin-bottom: 20px;
-                margin-left: 10px;
-            }
-            ul {
-                padding-left: 18px;
-                list-style-image: url('../images/1x/bullet-point.png');
-                margin-bottom: 0px;
-                li {
-                    margin-top: 15px;
-                    line-height: 18px;
-                }
-            }
-        }
-        .floating-image {
-            position: absolute;
-            top: calc(50% - 130px);
-            left: calc(100% - 50px);
-        }
-        form {
-            background: #5393ce;
-            padding: 28px 2rem;
-            position: relative;
-            @media screen and (max-width: 460px) {
-                padding: 28px 1rem;
-            }
-            .input-wrapper {
-                display: flex;
-                flex-direction: column;
-                color: white;
-                margin: auto;
-                margin-top: 11px;
-                max-width: 205px;
-                label {
-                    white-space: nowrap;
-                }
-                input {
-                    border-radius: 1rem;
-                    border: none;
-                    padding-left: .5rem;
-                    padding-right: .5rem;
-                }
-            }
-            #trials_submit {
-                background: #D8EAD0;
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                border-radius: .8rem;
-                justify-content: space-between;
-                padding: .5rem 1rem;
-                font-size: 20px;
-                font-weight: bold;
-                margin: 36px 0px 0px 5rem;
-                @media screen and (max-width: 768px) {
-                    font-size: 1rem;
-                    margin: 2rem auto;
-                }
-                img {
-                    max-width: 62px;
-                    height: 12px;
-                    margin-top: 0px;
-                    @media screen and (max-width: 460px) {
-                        width: 31px;
-                    }
-                }
-                input {
-                    background: none;
-                }
-            }
-        }
-        div#our-sponsors {
-            margin-top: 4rem;
-            background: $webBrightBlue;
-            color: white;
-            font-weight: 600;
-            border-bottom: 1px solid $lightBlue;
-            .w50-center {
-                width: 50%;
-                margin: auto;
-                display: flex;
-                align-items: center;
-                @media screen and (max-width: 992px) {
-                    margin-left: auto;
-                    margin-right: auto;
-                    justify-content: center;
-                }
-            }
-            @media screen and (max-width: 768px) {
-                flex-direction: column;
-                padding-top: 1rem;
-            }
-            h6 {
-                text-transform: uppercase;
-                margin-bottom: 0;
-                height: 1rem;
-                white-space: nowrap;
-                font-size: 12px;
-                font-family: "Raleway";
-                margin-right: 27px;
-                span {
-                    font-weight: bold;
-                }
-            }
-            .sponsor-wrapper {
-                display: flex;
-                align-items: center;
-                justify-content: flex-end;
-                padding: 1rem 0;
-                @media screen and (max-width: 992px) {
-                    justify-content: center;
-                    width: 100%;
-                }
-            }
-            a {
-                margin-right: 27px;
-                @media screen and (max-width: 768px) {
-                    max-width: 66px;
-                    margin-right: 1rem;
-                }
-                @media screen and (max-width: 481px) {
-                    max-width: 55px;
-                    margin-right: 1rem;
-                }
-                img {
-                    width: auto;
-                    margin-top: 0px;
-                }
-            }
-        }
+      }
     }
-    div#main-footer {
+  }
+  section#advisory-board {
+    background: url("../images/1x/advisory-board-bg.png");
+    margin: 0;
+    padding: 0 0 52px 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    @media screen and (max-width: 768px) {
+      font-size: 1rem;
+      padding-top: 1rem;
+      padding-bottom: 3rem;
+    }
+    h1 {
+      text-transform: uppercase;
+      padding-top: 100px;
+      padding-bottom: 70px;
+      @media screen and (max-width: 768px) {
+        padding-top: 40px;
+      }
+      span {
+        &:nth-child(1) {
+          font-family: "Raleway";
+          font-weight: bold;
+          color: #9fceef;
+          font-size: 34px;
+        }
+        &:nth-child(2) {
+          font-family: "Impact";
+          font-size: 32px;
+          color: white;
+        }
+      }
+    }
+    div.member {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .member-image {
+        position: relative;
+        padding: 0 0 100px 0;
+        img#memeber-photo {
+          margin: auto;
+          position: relative;
+        }
+        div#icon {
+          background: $webBrightBlue;
+          border-radius: 50%;
+          color: white;
+          width: 3rem;
+          height: 3rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 1rem;
+          line-height: 1.2;
+          position: absolute;
+          bottom: -1.5rem;
+          left: calc(50%-1.5rem);
+          font-weight: bold;
+          font-size: 1.2rem;
+        }
+        #member-info {
+          padding-top: 50px;
+          color: white;
+          font-family: "Raleway";
+          font-weight: bold;
+          span {
+            display: block;
+            text-align: center;
+          }
+          .member-name {
+            font-size: 22px;
+          }
+          .member-secondary {
+            font-size: 18px;
+          }
+        }
+      }
+    }
+  }
+  footer {
+    background: $webBrightBlue;
+    padding: 1rem;
+    font-size: 0.8rem;
+    @media screen and (max-width: 992px) {
+      flex-direction: column;
+      align-items: center;
+    }
+    .footer-item-column {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      @media screen and (max-width: 992px) {
+        margin-bottom: 1rem;
+      }
+      p {
+        padding: 0;
+        margin: 0;
+        text-transform: uppercase;
         color: white;
-        background: #424143 !important;
-        overflow-x: hidden;
-        div.container>div {
-            width: auto;
-            @media screen and (max-width: 992px) {
-                margin: auto;
-            }
-        }
-        h3 {
-            font-size: 32px;
-            font-family: 'Raleway';
-            text-transform: uppercase;
-            span:nth-child(1) {
-                font-weight: 300;
-            }
-            span:nth-child(2) {
-                font-weight: 700;
-            }
-        }
-        ul {
-            padding-left: 25px;
-            &:nth-child(2) {
-                margin-left: 115px;
-                @media screen and (max-width: 768px) {
-                    margin-left: initial;
-                }
-            }
-        }
-        li {
-            font-size: 20px;
-            margin-top: .5rem;
-        }
-        p {
-            font-size: 20px;
-        }
-        .footer-input-wrapper {
-            max-width: 350px;
-            width: 100%;
-            border-radius: 1rem;
-            height: 41px;
-            border: none;
-            background: white;
-            display: flex;
-            input {
-                background: 0;
-                border: none;
-                padding-left: 1rem;
-            }
-            button {
-                margin-left: auto;
-                background: $webBrightBlue;
-                border-radius: 1rem;
-                border: none;
-                padding: 0 1rem;
-                color: white;
-                font-weight: bold;
-            }
-        }
+      }
     }
+    .footer-item {
+      display: flex;
+      align-items: center;
+      @media screen and (max-width: 992px) {
+        margin-bottom: 1rem;
+        flex-direction: column;
+        text-align: center;
+      }
+      img {
+        margin-right: 1rem;
+        @media screen and (max-width: 992px) {
+          margin-right: 0;
+        }
+      }
+      p {
+        text-transform: uppercase;
+        color: white;
+        margin: 0;
+        padding: 0;
+        span {
+          font-weight: 600;
+        }
+      }
+    }
+  }
+  section#clinical-trials {
+    background: url("../images/1x/clinical-trials-gradient-bg.png");
+    background-size: cover;
+    padding-top: 68px;
+    h1 {
+      margin-bottom: 35px;
+      font-size: 32px;
+      text-transform: uppercase;
+      span:first-child {
+        font-family: "Raleway";
+        color: white;
+      }
+      span:last-child {
+        font-family: "Raleway";
+        font-weight: bolder;
+        border-bottom: 1px solid white;
+        padding-bottom: 0.5rem;
+        margin-left: 0.8rem;
+      }
+    }
+    img {
+      width: 100%;
+      margin-top: 18px;
+    }
+    .clinical-trials-browse {
+      background: white;
+      font-family: "Myriad Pro", sans-serif;
+      font-size: 16px;
+      padding: 34px 15px 22px 20px;
+      h3 {
+        font-family: "Impact", sans-serif;
+        font-size: 18px;
+        border-bottom: 2px solid #4ebec6;
+        width: 158px;
+        white-space: nowrap;
+        padding-bottom: 12px;
+        margin-bottom: 20px;
+        margin-left: 10px;
+      }
+      ul {
+        padding-left: 18px;
+        list-style-image: url("../images/1x/bullet-point.png");
+        margin-bottom: 0px;
+        li {
+          margin-top: 15px;
+          line-height: 18px;
+        }
+      }
+    }
+    .floating-image {
+      position: absolute;
+      top: calc(50% - 130px);
+      left: calc(100% - 50px);
+    }
+    form {
+      background: #5393ce;
+      padding: 28px 2rem;
+      position: relative;
+      @media screen and (max-width: 460px) {
+        padding: 28px 1rem;
+      }
+      .input-wrapper {
+        display: flex;
+        flex-direction: column;
+        color: white;
+        margin: auto;
+        margin-top: 11px;
+        max-width: 205px;
+        label {
+          white-space: nowrap;
+        }
+        input {
+          border-radius: 1rem;
+          border: none;
+          padding-left: 0.5rem;
+          padding-right: 0.5rem;
+        }
+      }
+      #trials_submit {
+        background: #d8ead0;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        border-radius: 0.8rem;
+        justify-content: space-between;
+        padding: 0.5rem 1rem;
+        font-size: 20px;
+        font-weight: bold;
+        margin: 36px 0px 0px 5rem;
+        @media screen and (max-width: 768px) {
+          font-size: 1rem;
+          margin: 2rem auto;
+        }
+        img {
+          max-width: 62px;
+          height: 12px;
+          margin-top: 0px;
+          @media screen and (max-width: 460px) {
+            width: 31px;
+          }
+        }
+        input {
+          background: none;
+        }
+      }
+    }
+    div#our-sponsors {
+      margin-top: 4rem;
+      background: $webBrightBlue;
+      color: white;
+      font-weight: 600;
+      border-bottom: 1px solid $lightBlue;
+      .w50-center {
+        width: 50%;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        @media screen and (max-width: 992px) {
+          margin-left: auto;
+          margin-right: auto;
+          justify-content: center;
+        }
+      }
+      @media screen and (max-width: 768px) {
+        flex-direction: column;
+        padding-top: 1rem;
+      }
+      h6 {
+        text-transform: uppercase;
+        margin-bottom: 0;
+        height: 1rem;
+        white-space: nowrap;
+        font-size: 12px;
+        font-family: "Raleway";
+        margin-right: 27px;
+        span {
+          font-weight: bold;
+        }
+      }
+      .sponsor-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        padding: 1rem 0;
+        @media screen and (max-width: 992px) {
+          justify-content: center;
+          width: 100%;
+        }
+      }
+      a {
+        margin-right: 27px;
+        @media screen and (max-width: 768px) {
+          max-width: 66px;
+          margin-right: 1rem;
+        }
+        @media screen and (max-width: 481px) {
+          max-width: 55px;
+          margin-right: 1rem;
+        }
+        img {
+          width: auto;
+          margin-top: 0px;
+        }
+      }
+    }
+  }
+  div#main-footer {
+    color: white;
+    background: #424143 !important;
+    overflow-x: hidden;
+    div.container > div {
+      width: auto;
+      @media screen and (max-width: 992px) {
+        margin: auto;
+      }
+    }
+    h3 {
+      font-size: 32px;
+      font-family: "Raleway";
+      text-transform: uppercase;
+      span:nth-child(1) {
+        font-weight: 300;
+      }
+      span:nth-child(2) {
+        font-weight: 700;
+      }
+    }
+    ul {
+      padding-left: 25px;
+      &:nth-child(2) {
+        margin-left: 115px;
+        @media screen and (max-width: 768px) {
+          margin-left: initial;
+        }
+      }
+    }
+    li {
+      font-size: 20px;
+      margin-top: 0.5rem;
+    }
+    p {
+      font-size: 20px;
+    }
+    .footer-input-wrapper {
+      max-width: 350px;
+      width: 100%;
+      border-radius: 1rem;
+      height: 41px;
+      border: none;
+      background: white;
+      display: flex;
+      input {
+        background: 0;
+        border: none;
+        padding-left: 1rem;
+      }
+      button {
+        margin-left: auto;
+        background: $webBrightBlue;
+        border-radius: 1rem;
+        border: none;
+        padding: 0 1rem;
+        color: white;
+        font-weight: bold;
+      }
+    }
+  }
 }
 
 section#brain-tumor-symptoms {
-    background: url("../images/1x/bg-symptoms_1.png");
+  background: url("../images/1x/bg-symptoms_1.png");
+  background-position: -100px -100px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 68px;
+  padding-bottom: 68px;
+  font-family: "Myriad Pro";
+  .survey-notice {
+    text-align: center;
+    color: $webBrightBlue;
+    font-weight: bold;
+  }
+  .position-relative img {
+    bottom: 0;
+  }
+  .svg {
+    width: 95%;
+    margin-bottom: 1rem;
+  }
+  .svg-mobile {
+    width: 75%;
+    margin: 1rem auto;
+  }
+  .bg-symptoms-content {
+    background: url("../images/1x/bg-symptoms.png");
+    background-size: cover;
     background-position: -100px -100px;
     background-repeat: no-repeat;
-    background-size: cover;
-    padding-top: 68px;
-    padding-bottom: 68px;
-    font-family: 'Myriad Pro';
-    .survey-notice {
-        text-align: center;
-        color: $webBrightBlue;
-        font-weight: bold;
+  }
+  h1 {
+    margin-bottom: 35px;
+    font-size: 32px;
+    text-transform: uppercase;
+    span:first-child {
+      font-family: "Raleway";
+      color: white;
     }
-    .position-relative img {
-        bottom: 0;
+    span:last-child {
+      font-family: "Raleway";
+      font-weight: bolder;
+      border-bottom: 1px solid white;
+      padding-bottom: 0.5rem;
+      margin-left: 0.8rem;
     }
-    .svg {
-        width: 95%;
-        margin-bottom: 1rem;
+  }
+  aside {
+    background: white;
+    padding: 18px 13px 20px 18px;
+    font-size: 20px;
+    line-height: 26.4px;
+    h3 {
+      font-family: "Impact", sans-serif;
+      font-size: 23px;
+      border-bottom: 2px solid #4ebec6;
+      width: 96px;
+      white-space: nowrap;
+      padding-bottom: 12px;
+      margin-bottom: 20px;
     }
-    .svg-mobile {
-        width: 75%;
-        margin: 1rem auto;
+  }
+  .symptoms-list {
+    font-family: "Myriad Pro";
+    font-size: 20px;
+    padding-left: 32px;
+    padding-right: 30px;
+    line-height: 24px;
+    h3 {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 0;
     }
-    .bg-symptoms-content {
-        background: url("../images/1x/bg-symptoms.png");
-        background-size: cover;
-        background-position: -100px -100px;
-        background-repeat: no-repeat;
-    }
-    h1 {
-        margin-bottom: 35px;
-        font-size: 32px;
-        text-transform: uppercase;
-        span:first-child {
-            font-family: 'Raleway';
-            color: white;
-        }
-        span:last-child {
-            font-family: 'Raleway';
-            font-weight: bolder;
-            border-bottom: 1px solid white;
-            padding-bottom: .5rem;
-            margin-left: .8rem;
-        }
-    }
-    aside {
-        background: white;
-        padding: 18px 13px 20px 18px;
-        font-size: 20px;
-        line-height: 26.4px;
-        h3 {
-            font-family: 'Impact', sans-serif;
-            font-size: 23px;
-            border-bottom: 2px solid #4EBEC6;
-            width: 96px;
-            white-space: nowrap;
-            padding-bottom: 12px;
-            margin-bottom: 20px;
-        }
-    }
-    .symptoms-list {
-        font-family: "Myriad Pro";
-        font-size: 20px;
-        padding-left: 32px;
-        padding-right: 30px;
-        line-height: 24px;
-        h3 {
-            font-size: 20px;
-            font-weight: bold;
-            margin-bottom: 0;
-        }
-    }
-    .table-wrapper {
-        overflow-x: auto;
-    }
-    table {
-        min-width: 500px;
+  }
+  .table-wrapper {
+    overflow-x: auto;
+  }
+  table {
+    min-width: 500px;
+    width: 100%;
+    table-layout: fixed;
+    thead {
+      background: #5294cf !important;
+      color: white;
+      td {
         width: 100%;
-        table-layout: fixed;
-        thead {
-            background: #5294cf !important;
-            color: white;
-            td {
-                width: 100%;
-            }
-        }
-        tbody tr:nth-of-type(odd) {
-            background: #f3f3f3
-        }
-        tbody tr:nth-of-type(even) {
-            background: white;
-        }
-        tr td:nth-of-type(2),
-        tr td:nth-of-type(3) {
-            width: 200px !important;
-            text-align: center;
-        }
-        td {
-            border: 1px solid #5294cf;
-            padding: .2rem .5rem;
-            p {
-                margin-bottom: 0;
-            }
-            .center {
-                text-align: center;
-            }
-        }
+      }
     }
+    tbody tr:nth-of-type(odd) {
+      background: #f3f3f3;
+    }
+    tbody tr:nth-of-type(even) {
+      background: white;
+    }
+    tr td:nth-of-type(2),
+    tr td:nth-of-type(3) {
+      width: 200px !important;
+      text-align: center;
+    }
+    td {
+      border: 1px solid #5294cf;
+      padding: 0.2rem 0.5rem;
+      p {
+        margin-bottom: 0;
+      }
+      .center {
+        text-align: center;
+      }
+    }
+  }
+}
+
+section#video-library {
+  padding-top: 68px;
+  @media screen and (max-width: 576px) {
+    background: #d8ead0;
+    padding: 0.5rem;
+  }
+  .video-library-content {
+    background: #d8ead0;
+    @media screen and (max-width: 576px) {
+      background: white;
+      border: 1px solid #5293cf;
+    }
+    padding: 43px 36px;
+    color: #5293cf;
+    font-size: 16px;
+    line-height: 19.2px;
+    .video-library-details {
+      padding-top: 20px;
+    }
+    .row-heading {
+      font-family: "Myriad Pro";
+      font-weight: bold;
+      color: white;
+      font-size: 18px;
+      background: #8dcaee;
+      padding: 16px 10px;
+      box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.35);
+      align-self: flex-start;
+      .row-heading-cta a {
+        color: #5293cf;
+        font-weight: bold;
+      }
+    }
+    .video-row-bb {
+      border-bottom: 1px solid #badbba;
+    }
+    .video-name {
+      font-weight: bold;
+    }
+    .video-pres-link a {
+      color: #4ebec6;
+    }
+    .date {
+      color: #4e565c;
+    }
+  }
+  h1 {
+    margin-bottom: 35px;
+    font-size: 32px;
+    text-transform: uppercase;
+    span:first-child {
+      font-family: "Raleway";
+      color: #47b7e9;
+    }
+    span:last-child {
+      font-family: "Raleway";
+      font-weight: bolder;
+      border-bottom: 1px solid #47b7e9;
+      padding-bottom: 0.5rem;
+      margin-left: 0.8rem;
+    }
+  }
+}
+
+#video-library + div > div#our-sponsors,
+#clinical-trials-finder ~ div > div#our-sponsors {
+  margin-top: 4rem;
+  background: $webBrightBlue;
+  color: white;
+  font-weight: 600;
+  border-bottom: 1px solid $lightBlue;
+  .w50-center {
+    width: 50%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    @media screen and (max-width: 992px) {
+      margin-left: auto;
+      margin-right: auto;
+      justify-content: center;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    padding-top: 1rem;
+  }
+  h6 {
+    text-transform: uppercase;
+    margin-bottom: 0;
+    height: 1rem;
+    white-space: nowrap;
+    font-size: 12px;
+    font-family: "Raleway";
+    margin-right: 27px;
+    span {
+      font-weight: bold;
+    }
+  }
+  .sponsor-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 1rem 0;
+    @media screen and (max-width: 992px) {
+      justify-content: center;
+      width: 100%;
+    }
+  }
+  a {
+    margin-right: 27px;
+    @media screen and (max-width: 768px) {
+      max-width: 66px;
+      margin-right: 1rem;
+    }
+    @media screen and (max-width: 481px) {
+      max-width: 55px;
+      margin-right: 1rem;
+    }
+    img {
+      width: auto;
+      margin-top: 0px;
+    }
+  }
+}
+section#clinical-trials-finder {
+  padding-top: 68px;
+
+  .clinical-trials-finder-content {
+    background: #47b7e9;
+
+    padding: 10px 30px;
+
+    color: #5293cf;
+    font-size: 16px;
+    line-height: 19.2px;
+    .video-library-details {
+      padding-top: 20px;
+    }
+    .row-heading {
+      font-family: "Myriad Pro";
+      font-weight: 700;
+      color: #231f20;
+      font-size: 22px;
+      border: 3px solid #4ebec6;
+      background: #d8ead0;
+      padding: 20px 17px;
+      flex-basis: 100%;
+      margin-bottom: 1rem;
+    }
+
+    .row-heading-alt {
+      font-family: "Myriad Pro";
+      font-weight: 700;
+      color: #5293cf;
+      font-size: 19px;
+      border: 3px solid #4ebec6;
+      background: #fff;
+      padding: 10px 17px;
+      line-height: 1;
+      flex-basis: 100%;
+      flex-wrap: nowrap;
+      margin-bottom: 1rem;
+      align-items: center;
+      &:hover {
+        background: #25bbfc;
+        border: 3px solid transparent;
+        h3 {
+          color: #fff !important;
+        }
+      }
+    }
+    .row-heading-alt > h3 {
+      font-family: "Myriad Pro";
+      font-weight: 700;
+      color: #5293cf;
+      font-size: 19px;
+      line-height: 1;
+      flex-basis: 100%;
+      flex-wrap: nowrap;
+      margin-bottom: 0;
+    }
+    .link-icon {
+      width: 41.5px;
+      height: 41.5px;
+      background: #d8ead0;
+      border-radius: 50%;
+      padding: 8px;
+      border: 1px solid #4ebec6;
+    }
+    .video-row-bb {
+      border-bottom: 1px solid #badbba;
+    }
+    .video-name {
+      font-weight: bold;
+    }
+    .video-pres-link a {
+      color: #4ebec6;
+    }
+    .date {
+      color: #4e565c;
+    }
+  }
+  .disclaimer {
+    color: #5293cf;
+    @media screen and (min-width: 768px) {
+      padding: 20px 35px;
+    }
+    padding: 10px;
+    a {
+      color: #4e565c;
+    }
+  }
+  #start_over {
+    background: #47b7e9;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 0.8rem;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 26px 0px 0px 10px;
+    img {
+      max-width: 62px;
+      height: 12px;
+      margin-top: 0px;
+    }
+    input {
+      background: none;
+      border: none;
+      color: white;
+    }
+  }
+  h1 {
+    margin-bottom: 35px;
+    font-size: 32px;
+    text-transform: uppercase;
+    span:first-child {
+      font-family: "Raleway";
+      color: #47b7e9;
+    }
+    span:last-child {
+      font-family: "Raleway";
+      font-weight: bolder;
+      border-bottom: 1px solid #47b7e9;
+      padding-bottom: 0.5rem;
+      margin-left: 0.8rem;
+    }
+  }
+}
+#trial-finder-filters {
+  background: #d8ead0;
+  padding: 40px 20px;
+  margin-top: 2rem;
+  label {
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+    padding-right: 22px;
+    font-size: 18px;
+    color: #4ebec6;
+    font-weight: 700;
+    @media screen and (max-width: 576px) {
+      width: 100%;
+    }
+    input {
+      border-radius: 20px;
+      border: none;
+      padding-left: 15px;
+    }
+  }
+}
+#trials-table-wrapper {
+  overflow-x: hidden;
+  margin-bottom: -65px;
+  @media screen and (max-width: 768px) {
+    overflow: auto;
+  }
+}
+#trials-table {
+  width: 100%;
+  min-width: 500px;
+  text-align: center;
+
+  thead {
+    font-size: 28px;
+    background: #47b7e9;
+    color: white;
+  }
+  tbody {
+    background: #5293cf;
+    color: white;
+    font-weight: 700;
+
+    tr {
+      border: 1px solid white;
+    }
+    td {
+      padding: 1rem;
+    }
+  }
 }
